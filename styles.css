@@ -1,0 +1,178 @@
+/* Basic Styles */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fff0f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+}
+
+/* Header */
+.intro h1 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2.5em;
+    color: #ff69b4;
+    animation: fadeIn 2s ease;
+}
+
+.intro p {
+    color: #666;
+}
+
+/* Letter Cards */
+.letters {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.letter-card {
+    background: #ffb6c1;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: fadeIn 1s ease;
+}
+
+.letter-card:hover {
+    transform: scale(1.05);
+}
+
+/* Proposal Page */
+.proposal {
+    display: none;
+    margin-top: 20px;
+    background: #ffe4e1;
+    padding: 15px;
+    border-radius: 10px;
+    animation: fadeIn 2s ease forwards;
+}
+
+/* Proposal Section */
+.proposal {
+    display: block; /* Temporarily set to 'block' to make it visible */
+    margin-top: 20px;
+    background: #ffe4e1;
+    padding: 15px;
+    border-radius: 10px;
+    animation: fadeInScale 1s ease forwards;
+}
+
+
+/* Proposal Button Styling */
+.proposal-btn {
+    background-color: #ff69b4; /* Soft pink */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-family: 'Georgia', serif;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover and Click Effects */
+.proposal-btn:hover {
+    background-color: #ff85c2;
+    transform: scale(1.05);
+}
+
+.proposal-btn:active {
+    transform: scale(0.95);
+}
+
+/* Button Animation on Page Load */
+@keyframes fadeInButton {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.proposal-btn {
+    animation: fadeInButton 1s ease forwards;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Floating Hearts Background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://path-to-heart-image.png'); /* Replace with an actual heart image URL */
+    background-size: 50px;
+    background-repeat: repeat;
+    opacity: 0.1;
+    animation: float 15s infinite linear;
+    z-index: -1;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-200px); }
+}
+
+/* Letter Opening Animation */
+.letter-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.letter-card p {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+.letter-card:hover p {
+    max-height: 100px; /* Adjust based on letter content */
+    opacity: 1;
+}
+
+/* Proposal Reveal */
+.proposal {
+    display: none;
+    margin-top: 20px;
+    background: #ffe4e1;
+    padding: 15px;
+    border-radius: 10px;
+    animation: fadeInScale 1s ease forwards;
+}
+
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Additional Styles */
+.letter-card:hover {
+    background-color: #ff69b4;
+    color: #fff;
+}
+
+.letter-card:hover h2 {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
